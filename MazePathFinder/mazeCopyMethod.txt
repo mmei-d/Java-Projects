@@ -1,0 +1,10 @@
+//prints out copy of mazeCopy[][] to see which positions have been marked
+String copy = "";
+for(int i = 0; i < mazeCopy.length; i++){
+	for(int j = 0; j < mazeCopy[i].length; j++){
+		copy += mazeCopy[i][j] + " ";
+		if(j == mazeCopy[i].length - 1)
+			copy += "\n";
+	}
+}
+System.out.println(copy);
