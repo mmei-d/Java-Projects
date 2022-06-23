@@ -5,3 +5,5 @@
 "ArrayMax.java" uses the IndexMinPQ data structure to return the largest numeric value in an array.
 
 "DuoDec.java": parseDuoDec() returns the 2's complement binary representation for the DuoDec number given in String s. toString() return the String of DuoDec digit that represent the value of the 2's complement binary number given in the input parameter 'value.'
+
+"MazePathFinder.java" implements two versions of an algorithm for finding the solution path through a square NxN maze of 0's and 1's, which are the walls. One method uses stacks, while the other uses queues.
