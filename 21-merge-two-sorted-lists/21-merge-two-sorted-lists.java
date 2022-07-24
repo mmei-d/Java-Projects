@@ -12,7 +12,7 @@ class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         // head of new list
         ListNode prehead = new ListNode(-1);
-        // keep track of last node
+        // keep track of last node of new list
         ListNode cur = prehead;
         while(list1 != null && list2 != null){
             if(list1.val <= list2.val){
