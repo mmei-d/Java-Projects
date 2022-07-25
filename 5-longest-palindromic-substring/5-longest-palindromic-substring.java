@@ -1,37 +1,25 @@
 class Solution {
     public String longestPalindrome(String s) {
-    
-        int left = 0;
-        int right = 0;
-        String maxPal = "";
-        
-        while(left < s.length() && right < s.length()){
-            if(s.charAt(left) == s.charAt(right)){
-                String curStr = s.substring(left, right + 1);
-                if(isPalindrome(curStr)){
-                    if(curStr.length() > maxPal.length()) maxPal = curStr;
-                }else if(right + 1 == s.length()){
-                    left++;
-                    right = left;
-                }
-            }else if(left + 1 != s.length() && right + 1 == s.length()){
-                left++;
-                right = left;
+        if (s == null || s.length() < 1) return "";
+        int start = 0, end = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int len1 = expandAroundCenter(s, i, i);
+            int len2 = expandAroundCenter(s, i, i + 1);
+            int len = Math.max(len1, len2);
+            if (len > end - start) {
+                start = i - (len - 1) / 2;
+                end = i + len / 2;
             }
-            right++;
         }
-        
-        return maxPal;
+        return s.substring(start, end + 1);
     }
-    
-    boolean isPalindrome(String str){
-        int left = 0;
 
-        for(int i = str.length() - 1; i > left; i--){
-            if(str.charAt(left) != str.charAt(i)) return false;
-            left++;
+    private int expandAroundCenter(String s, int left, int right) {
+        int L = left, R = right;
+        while (L >= 0 && R < s.length() && s.charAt(L) == s.charAt(R)) {
+            L--;
+            R++;
         }
-        
-        return true;
+        return R - L - 1;
     }
 }
