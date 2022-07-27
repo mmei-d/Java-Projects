@@ -14,10 +14,10 @@ class Solution {
         
         int interval = 1;
         while(interval < lists.length){
-            for (int i = 0; i + interval< lists.length; i=i+interval*2) {
-                lists[i]=mergeTwoLists(lists[i],lists[i+interval]);            
+            for (int i = 0; i + interval < lists.length; i += interval*2) {
+                lists[i] = mergeTwoLists(lists[i], lists[i + interval]);            
             }
-            interval*=2;
+            interval *= 2;
         }
 
         return lists[0];
