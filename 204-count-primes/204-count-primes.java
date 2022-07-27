@@ -5,7 +5,7 @@ class Solution {
         }
         
         boolean[] numbers = new boolean[n];
-        for (int p = 2; p <= (int)Math.sqrt(n); ++p) {
+        for (int p = 2; p <= (int)Math.sqrt(n); p++) {
             if (numbers[p] == false) {
                 for (int j = p*p; j < n; j += p) {
                     numbers[j] = true;
